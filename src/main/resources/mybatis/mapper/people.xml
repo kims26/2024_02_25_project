@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-folders.dtd">
+<mapper namespace="project.projectmini.dao.PeopleDao">
+
+  <insert id="insertPeople" parameterType="PeopleVo">
+    INSERT INTO people (p_name, p_email, p_personal, p_pwd, p_phone)
+    VALUES (#{p_name}, #{p_email}, #{p_personal}, #{p_pwd}, #{p_phone})
+  </insert>
+  
+</mapper>
