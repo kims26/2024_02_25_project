@@ -1,4 +1,4 @@
-<!-- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
@@ -18,10 +18,10 @@
     <link rel="stylesheet" href="../css/index.css" />
 
     <script src="../js/index.js"></script>
-    <script src="../js/signup.js"></script> -->
-   <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
+    <script src="../js/signup.js"></script> 
+   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-   <!-- <script type="text/javascript">
+    <script type="text/javascript"> 
 
     function changePhone1(){
         const phone1 = document.getElementById("phone1").value
@@ -33,35 +33,35 @@
     function changePhone2(){
         const phone2 = document.getElementById("phone2").value
         if(phone2.length === 4) {
-            document.getElementById("phone3").focus() -->
-    <!-- //     }
-    // } -->
+            document.getElementById("phone3").focus() 
+       }
+     } 
     
-    <!-- // function changePhone3(){
-    //     const phone1 = document.getElementById("phone1").value
-    //     const phone2 = document.getElementById("phone2").value
-    //     const phone3 = document.getElementById("phone3").value
-    //     if(phone1.length === 3 && phone2.length === 4 && phone3.length === 4){
-            //document.getElementById("token__button").style = "background-color: #FFFFFF; color: #0068FF; cursor: pointer;"
-            //document.getElementById("token__button").removeAttribute("disabled")
-    //         let p_tel = phone1 + '-' + phone2 + '-' + phone3;
-    //         document.getElementById("p_tel").value = p_tel;
-    //     }
-    //     else{
-    //         document.getElementById("p_tel").value = '';
-    //     }
+    function changePhone3(){
+        const phone1 = document.getElementById("phone1").value
+        const phone2 = document.getElementById("phone2").value
+       const phone3 = document.getElementById("phone3").value
+         if(phone1.length === 3 && phone2.length === 4 && phone3.length === 4){
+            document.getElementById("token__button").style = "background-color: #FFFFFF; color: #0068FF; cursor: pointer;"
+            document.getElementById("token__button").removeAttribute("disabled")
+             let p_tel = phone1 + '-' + phone2 + '-' + phone3;
+             document.getElementById("p_tel").value = p_tel;
+         }
+         else{
+            document.getElementById("p_tel").value = '';
+         }
     
-    // } -->
-    <!-- // </script> -->
+     } 
+     </script> 
 
-<!-- <script type="text/javascript">
+<script type="text/javascript">
 
 function send(f){
           
     var p_name 	= f.p_name.value.trim();
     var p_email = f.p_email.value.trim();
 
-    // var p_id = document.getElementById('o_id');
+    var p_id = document.getElementById('o_id');
 
     var p_pwd = document.getElementById('p_pwd');
 
@@ -110,16 +110,16 @@ function send(f){
     f.action = "insert.do";
     f.submit(); 
 }
-</script> -->
+</script> 
 
-<!-- </head> -->
+</head> 
 
-  <!-- <body> -->
-    <!-- 전체 컨테이너 -->
-    <!-- <div class="Container"> -->
+  <body>
+    전체 컨테이너
+    <div class="Container">
       <!-- 여기서부터 회원가입 모달창 -->
-      <!-- <div id="ModalContainer" onclick="CloseModal()"></div>
-      <div id="SignupModalWrapper">
+       <div id="ModalContainer" onclick="CloseModal()"></div>
+    <div id="SignupModalWrapper">
         <div class="SignupTitle">회원가입</div>
         <div class="SignupInputWrapper">
           <span class="SignupInputName">이름</span>
@@ -129,7 +129,7 @@ function send(f){
             type="text"
             placeholder="이름을 입력해주세요"
           />
-        </div>
+        </div> 
         <div class="SignupInputWrapper">
           <span class="SignupInputName">주민등록번호</span>
           <div style="display: flex; align-items: center">
@@ -239,12 +239,12 @@ function send(f){
         <div class="ButtonWrapper">
           <div class="Signup" onclick="submitSignup()">회원 가입</div>
         </div>
-      </div> -->
+      </div> -
 
       <!-- 여기까지가 회원가입 모달창 -->
 
       <!-- 본 컨텐츠 -->
-      <!-- <div class="Wrapper">
+      <div class="Wrapper">
         <div
           id="Navi_Wrapper"
           style="width: 100%; display: flex; justify-content: space-between"
@@ -277,4 +277,4 @@ function send(f){
       </div>
     </div>
   </body>
-</html> -->
+</html>

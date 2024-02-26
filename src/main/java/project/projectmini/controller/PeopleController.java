@@ -31,7 +31,7 @@ public class PeopleController {
 
 		return "people/people_insert_form";
 	}
-    
+
     @RequestMapping("people/people_insert.do")
     public String insert(PeopleVo vo){
 
