@@ -13,5 +13,10 @@ public interface PeopleDao {
             public List<PeopleVo> selectList();
 
             public int insertPeople(PeopleVo vo);
+
+            public PeopleVo selectOneFromIdx(int p_idx);
+
+            public PeopleVo selectOneFromId(String p_id);
+
     
 }

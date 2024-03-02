@@ -4,6 +4,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="project.projectmini.PeopleDao">
 
+<select id="selectList" resultType="PeopleVo">
+    select * from people order by p_idx
+</select>
+
 <insert id="insertPeople"  parameterType="PeopleVo">
   	insert into people values(seq_people_p_idx.nextVal,
   	                           #{ p_name },
@@ -13,5 +17,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   	                           #{ p_phone }
                               )
   </insert>
+
+   <select id="selectOneFromIdx" parameterType="int"  resultType="PeopleVo">
+     select * from people where p_idx=#{ p_idx }
+  </select>
+  
+  <select id="selectOneFromId" parameterType="String"  resultType="PeopleVo">
+     select * from people where p_email=#{ p_email }
+  </select>
+
 
 </mapper>

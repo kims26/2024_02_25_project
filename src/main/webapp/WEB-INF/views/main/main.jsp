@@ -8,6 +8,10 @@
     <title>Document</title>
 </head>
 <body>
-    hello
+    <nav id ="nav">
+        <ui>
+            <li><a href="/people/insert_form.do">로그인 버튼</a></li>
+        </ui>
+    </nav>
 </body>
 </html>
