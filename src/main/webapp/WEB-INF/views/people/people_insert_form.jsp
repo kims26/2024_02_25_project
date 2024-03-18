@@ -29,12 +29,14 @@
           f.p_name.focus();
           return false;
         }
+
         if(p_emali){
           alert('이메일을 입력');
           f.p_emali.value='';
           f.p_emali.focus();
           return false;
         }
+        
         if(p_personal){
           alert('주민등록');
           f.p_personal.value='';
