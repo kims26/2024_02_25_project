@@ -7,117 +7,98 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>로그인/회원가입</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
     <link rel="stylesheet" href="../css/index.css" />
     <script src="../js/index.js"></script>
     <script src="../js/signup.js"></script>
     
     <script type="text/javascript">
-
-      function send(f){
-        var p_name      =f.p_name.value.trim();
-        var p_emali     =f.p_emali.value.trim();
-
-        var p_personal   =f.p_personal.value.trim();
-        var p_pwd        =f.p_pwd.value.trim();
-
-        var p_prefer     =f.p_prefer.value.trim();
-        var p_phone       =f.p_phone.value.trim();
-
-        if(p_name){
-          alert('이름을 입력해라');
-          f.p_name.value='';
-          f.p_name.focus();
-          return false;
-        }
-
-        if(p_emali){
-          alert('이메일을 입력');
-          f.p_emali.value='';
-          f.p_emali.focus();
-          return false;
-        }
-        
-        if(p_personal){
-          alert('주민등록');
-          f.p_personal.value='';
-          f.p_personal.focus();
-          return false;
-        }
-
-        if(p_pwd==''){
-          alert('비밀번호를 입력');
-          f.p_pwd.value='';
-          f.p_pwd.focus();
-          return false;
-        }
-        if(p_prefer){
-          alert('사이트좋아하하는거 입력해라');
-          f.p_prefer.value='';
-          f.p_prefer.focus();
-          return false;
-        }
-        if(p_phone==''){
-          alert('ㄷ=휴대폰번호를');
-          f.p_phone.value='';
-          f.p_phone.focus();
-          return false;
-        }
-        f.action = "insert.do";
-        f.submit();
+      function send(f) {
+          var p_name = f.p_name.value.trim();
+          var p_email = f.p_email.value.trim();
+          var p_personal = f.p_personal.value.trim();
+          var p_pwd = f.p_pwd.value.trim();
+          var p_prefer = f.p_prefer.value.trim();
+  
+          if (p_name == "") {
+              alert('이름을 입력해주세요');
+              f.p_name.focus();
+              return false;
+          }
+  
+          if (p_email == "") {
+              alert('이메일을 입력해주세요');
+              f.p_email.focus();
+              return false;
+          }
+  
+          if (p_personal == "") {
+              alert('주민등록번호를 입력해주세요');
+              f.p_personal.focus();
+              return false;
+          }
+  
+          if (p_pwd == "") {
+              alert('비밀번호를 입력해주세요');
+              f.p_pwd.focus();
+              return false;
+          }
+  
+          if (p_prefer == "") {
+              alert('좋아하는 사이트를 입력해주세요');
+              f.p_prefer.focus();
+              return false;
+          }
+  
+          // 폼을 서버로 제출
+          f.action = "insert.do";
+          return true;
       }
-
-    </script>
+  </script>
   </head>
 
 
   <body>
-    <form method="POST">
 
-  
-    <!-- 전체 컨테이너 -->
     <div class="Container">
-      <!-- 여기서부터 회원가입 모달창 -->
-      <div id="ModalContainer" onclick="CloseModal()"></div>
+      <form method="POST" onsubmit="return send(this);">
+          <div id="ModalContainer" onclick="CloseModal()"></div>
+  
+          <div id="SignupModalWrapper">
+              <div class="SignupTitle">회원가입</div>
+  
+              <div class="SignupInputWrapper">
+                  <span class="SignupInputName">이름</span>
+                  <input
+                      name="p_name"
+                      id="p_name"
+                      class="SignupInput"
+                      type="text"
+                      placeholder="이름을 입력해주세요"
+                  />
+              </div>
+  
+              <div class="SignupInputWrapper">
+                  <span class="SignupInputName">주민등록번호</span>
+                  <input
+                      id="p_personal"
+                      name="p_personal"
+                      class="SignupInput"
+                      type="text"
+                      maxlength="13"
+                      placeholder="주민등록번호를 입력해주세요"
+                  />
+              </div>
 
-      <div id="SignupModalWrapper">
-        <div class="SignupTitle">회원가입</div>
-        <div class="SignupInputWrapper">
-          <span class="SignupInputName">이름</span>
-          <input
-            id="p_name"
-            class="SignupInput"
-            type="text"
-            placeholder="이름을 입력해주세요"
-          />
-        </div>
-        <div class="SignupInputWrapper">
-          <span class="SignupInputName">주민등록번호</span>
-          <div style="display: flex; align-items: center">
-            <input
-              id="p_personal"
-              style="width: 40%; text-align: center"
-              class="SignupInput"
-              type="text"
-              maxlength="6"
-            />
-            <span
-              style="
-                text-align: center;
-                color: #fff;
-                padding: 0 5px 0 5px;
-                font-size: 20px;
-              "
-              >-
-            </span>
-            <input
-              id="p_personal"
-              style="width: 40%; text-align: center"
-              class="SignupInput"
-              type="password"
-              maxlength="7"
-            />
-          </div>
-        </div>
         <div class="SignupInputWrapper">
           <span class="SignupInputName">핸드폰 번호</span>
           <div
@@ -169,39 +150,43 @@
             </div>
           </div>
         </div>
+
         <div class="SignupInputWrapper">
           <span class="SignupInputName">좋아하는 사이트</span>
           <input
-            id="p_prefer"
-            class="SignupInput"
-            type="text"
-            placeholder="좋아하는 사이트를 입력해주세요"
+              name="p_prefer"
+              id="p_prefer"
+              class="SignupInput"
+              type="text"
+              placeholder="좋아하는 사이트를 입력해주세요"
           />
-        </div>
-        <div class="SignupInputWrapper">
+      </div>
+      <div class="SignupInputWrapper">
           <span class="SignupInputName">이메일</span>
           <input
-            id="p_emali"
-            class="SignupInput"
-            type="text"
-            placeholder="이메일을 입력해주세요"
+              id="p_email" 
+              name="p_email"
+              class="SignupInput"
+              type="text"
+              placeholder="이메일을 입력해주세요"
           />
-        </div>
-        <div class="SignupInputWrapper">
+      </div>
+      <div class="SignupInputWrapper">
           <span class="SignupInputName">비밀번호</span>
           <input
-            id="p_pwd"
-            class="SignupInput"
-            type="password"
-            placeholder="비밀번호를 입력해주세요"
+              id="p_pwd"
+              name="p_pwd"
+              class="SignupInput"
+              type="password"
+              placeholder="비밀번호를 입력해주세요"
           />
-        </div>
-
-        <div class="ButtonWrapper">
-          <div class="Signup" onclick="send(this.form); return false;">회원 가입</div>
-        </div>
       </div>
 
+      <div class="ButtonWrapper">
+          <input type="submit" class="Signup" value="회원 가입" />
+      </div>
+  </div>
+</form>
       <!-- 여기까지가 회원가입 모달창 -->
 
       <!-- 본 컨텐츠 -->
@@ -238,7 +223,7 @@
       </div>
     </div>
 
-  </form>
+ 
 
   </body>
 </html>

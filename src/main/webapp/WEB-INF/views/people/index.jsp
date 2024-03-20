@@ -1,3 +1,6 @@
+<!-- 
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko">
   <head>
@@ -8,13 +11,20 @@
     <link rel="stylesheet" href="./index.css" />
     <script src="./index.js"></script>
     <script src="./signup.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
   </head>
-  <body>
+  <body> -->
     <!-- 전체 컨테이너 -->
-    <div class="Container">
+    <!-- <div class="Container"> -->
       <!-- 여기서부터 회원가입 모달창 -->
-      <div id="ModalContainer" onclick="CloseModal()"></div>
+      <!-- <div id="ModalContainer" onclick="CloseModal()"></div>
       <div id="SignupModalWrapper">
         <div class="SignupTitle">회원가입</div>
         <div class="SignupInputWrapper">
@@ -135,12 +145,12 @@
         <div class="ButtonWrapper">
           <div class="Signup" onclick="submitSignup()">회원 가입</div>
         </div>
-      </div>
+      </div> -->
 
       <!-- 여기까지가 회원가입 모달창 -->
 
       <!-- 본 컨텐츠 -->
-      <div class="Wrapper">
+      <!-- <div class="Wrapper">
         <div
           id="Navi_Wrapper"
           style="width: 100%; display: flex; justify-content: space-between"
@@ -173,4 +183,4 @@
       </div>
     </div>
   </body>
-</html>
+</html> -->

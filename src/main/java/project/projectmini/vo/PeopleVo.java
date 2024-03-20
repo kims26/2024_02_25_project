@@ -11,5 +11,6 @@ public class PeopleVo {
     String p_email;
     String p_personal;
     String p_pwd;
+    String p_prefer;
     String p_phone;
 }

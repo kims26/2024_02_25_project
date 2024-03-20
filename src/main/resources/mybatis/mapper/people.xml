@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="project.projectmini.PeopleDao">
+<mapper namespace="project.projectmini.dao.PeopleDao">
 
 <select id="selectList" resultType="PeopleVo">
     select * from people order by p_idx
@@ -11,9 +11,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <insert id="insertPeople"  parameterType="PeopleVo">
   	insert into people values(seq_people_p_idx.nextVal,
   	                           #{ p_name },
-                               #{ p_email },
+                              #{ p_email },
   	                           #{ p_personal },
   	                           #{ p_pwd },
+                              #{p_personal},
   	                           #{ p_phone }
                               )
   </insert>
