@@ -11,11 +11,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <insert id="insertPeople"  parameterType="PeopleVo">
   	insert into people values(seq_people_p_idx.nextVal,
   	                           #{ p_name },
+                              #{ p_personal },
+                              #{ p_phone },
+                              #{ p_prefer },
                               #{ p_email },
-  	                           #{ p_personal },
-  	                           #{ p_pwd },
-                              #{p_personal},
-  	                           #{ p_phone }
+                              #{ p_pwd }
                               )
   </insert>
 

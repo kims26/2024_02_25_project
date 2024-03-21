@@ -22,39 +22,53 @@
     <script src="../js/signup.js"></script>
     
     <script type="text/javascript">
+
       function send(f) {
           var p_name = f.p_name.value.trim();
           var p_email = f.p_email.value.trim();
+          var p_phone = f.p_phone.value.trim();
           var p_personal = f.p_personal.value.trim();
           var p_pwd = f.p_pwd.value.trim();
           var p_prefer = f.p_prefer.value.trim();
   
           if (p_name == "") {
               alert('이름을 입력해주세요');
+              // f.p_name.value='';
               f.p_name.focus();
               return false;
           }
   
           if (p_email == "") {
               alert('이메일을 입력해주세요');
+              // f.p_email.value='';
               f.p_email.focus();
+              return false;
+          }
+
+          if (p_phone == "") {
+              alert('번호입력');
+              // f.p_phone.value='';
+              f.p_phone.focus();
               return false;
           }
   
           if (p_personal == "") {
               alert('주민등록번호를 입력해주세요');
+              // f.p_personal.value='';
               f.p_personal.focus();
               return false;
           }
   
           if (p_pwd == "") {
               alert('비밀번호를 입력해주세요');
+              // f.p_pwd.value='';
               f.p_pwd.focus();
               return false;
           }
   
           if (p_prefer == "") {
               alert('좋아하는 사이트를 입력해주세요');
+              f.p_prefer.value='';
               f.p_prefer.focus();
               return false;
           }
@@ -63,6 +77,39 @@
           f.action = "insert.do";
           return true;
       }
+  </script>
+
+<script type="text/javascript">
+
+  function changePhone1(){
+      const phone1 = document.getElementById("phone1").value
+      if(phone1.length === 3) {
+          document.getElementById("phone2").focus()
+      }
+  }
+  
+  function changePhone2(){
+      const phone2 = document.getElementById("phone2").value
+      if(phone2.length === 4) {
+          document.getElementById("phone3").focus()
+      }
+  }
+  
+  function changePhone3(){
+      const phone1 = document.getElementById("phone1").value
+      const phone2 = document.getElementById("phone2").value
+      const phone3 = document.getElementById("phone3").value
+      if(phone1.length === 3 && phone2.length === 4 && phone3.length === 4){
+          //document.getElementById("token__button").style = "background-color: #FFFFFF; color: #0068FF; cursor: pointer;"
+          //document.getElementById("token__button").removeAttribute("disabled")
+          let p_phone = phone1 + '-' + phone2 + '-' + phone3;
+          document.getElementById("p_phone").value = p_phone;
+      }
+      else{
+          document.getElementById("p_phone").value = '';
+      }
+  
+  }
   </script>
   </head>
 
@@ -101,6 +148,7 @@
 
         <div class="SignupInputWrapper">
           <span class="SignupInputName">핸드폰 번호</span>
+
           <div
             style="
               display: flex;
@@ -108,28 +156,37 @@
               padding-bottom: 20px;
             "
           >
-            <div style="display: felx">
+          <input type="hidden" name="p_phone" id="p_phone">
+          <div class="d-flex">
+              <input class="SignupInput" id="phone1" style="width: 90px;" type="text" onkeyup="changePhone1()" /> - 
+              <input class="SignupInput" id="phone2" style="width: 90px;" type="text" onkeyup="changePhone2()" /> - 
+              <input class="SignupInput" id="phone3" style="width: 90px;" maxlength="4" onkeyup="changePhone3()" />
+          </div>
+            <!-- <div style="display: felx">
               <input
-                id="PhoneNumber01"
+                id="phone1"
                 class="SignupInput"
                 type="text"
+                onkeyup="changePhone1()"
                 maxlength="3"
                 value="010"
-                readonly
-              /><span class="PhoneSlash">-</span
+                readonly/><span class="PhoneSlash">-</span
               ><input
-                id="PhoneNumber02"
+                id="phone2"
                 class="SignupInput"
                 type="text"
+                onkeyup="changePhone2()"
                 maxlength="4"
               /><span class="PhoneSlash">-</span
               ><input
-                id="PhoneNumber03"
+                id="phone3"
                 class="SignupInput"
                 type="text"
+                onkeyup="changePhone3()"
                 maxlength="4"
               />
-            </div>
+            </div> -->
+
             <span class="NumberVailidationBtn" onclick="getValidationNumber()"
               >인증 번호 전송</span
             >
@@ -196,9 +253,10 @@
           style="width: 100%; display: flex; justify-content: space-between"
         ></div>
         <div class="LogoWrapper">
-          <div class="LogoTitle">CodeCamp</div>
+          <div class="LogoTitle">왜 안되지</div>
           <img class="LogoImg" src="../img/codecampLogo.png" />
-          <a href="../user/index.html" class="Menu_Button">유저 정보</a>
+          <a href="../people/list.do"><i class="Menu_Button" aria-hidden="true"></i>유저정보</a>
+          <!-- <a href="" class="Menu_Button">유저 정보</a> -->
         </div>
         <div id="SocialLoginGoogle">
           <img class="SocialLoginButtonImg" src="../img/google.png" />

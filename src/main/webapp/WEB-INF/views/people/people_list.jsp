@@ -18,7 +18,7 @@
     <div class="Container">
       <div id="Wrapper">
         <div id="Navi_Wrapper" style="width: 100%">
-          <a href="../login/index.html" class="Back_Button"> 🔙로그인 </a>
+          <a href="../people/login_form.do" class="Back_Button"> 🔙로그인 </a>
         </div>
         <div id="Content_Wrapper">
           <img

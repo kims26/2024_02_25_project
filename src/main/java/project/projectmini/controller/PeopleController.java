@@ -52,13 +52,13 @@ public class PeopleController {
         int res = peopleDao.insertPeople(vo);
         if(res == 0){
         }
-        return "redirect:people/login_form.do";
+        return "redirect:login_form.do";
     }
 
     @RequestMapping("/people/login_form.do")
 	public String login_form() {
 
-		return "people/people_login_form";
+		return "people/people_insert_form";
 	}
 
     @RequestMapping("/people/login.do")
@@ -128,7 +128,7 @@ public class PeopleController {
 
         model.addAttribute("list",list);
 
-        return "people/people_index";
+        return "people/people_list";
     }
 
 
