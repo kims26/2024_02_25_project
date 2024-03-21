@@ -16,7 +16,7 @@ public interface PeopleDao {
 
             public PeopleVo selectOneFromIdx(int p_idx);
 
-            public PeopleVo selectOneFromId(String p_id);
+            public PeopleVo selectOneFromId(String p_email);
 
     
 }

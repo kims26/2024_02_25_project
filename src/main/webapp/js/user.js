@@ -12,7 +12,7 @@ const createUserDiv = (data) => {
   // user
   const nameItem = document.createElement('div')
   nameItem.className = 'Item_Info'
-  nameItem.textContent = data?.name || '홍길동'
+  nameItem.textContent = data?.name || 'p_name'
 
   const emailItem = document.createElement('div')
   emailItem.className = 'Item_Info'
