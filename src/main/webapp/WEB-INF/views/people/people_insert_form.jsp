@@ -33,35 +33,29 @@
   
           if (p_name == "") {
               alert('이름을 입력해주세요');
-              // f.p_name.value='';
+              f.p_name.value='';
               f.p_name.focus();
               return false;
           }
   
           if (p_email == "") {
               alert('이메일을 입력해주세요');
-              // f.p_email.value='';
+              f.p_email.value='';
               f.p_email.focus();
-              return false;
-          }
-
-          if (p_phone == "") {
-              alert('번호입력');
-              // f.p_phone.value='';
-              f.p_phone.focus();
               return false;
           }
   
           if (p_personal == "") {
               alert('주민등록번호를 입력해주세요');
-              // f.p_personal.value='';
+              f.p_personal.value='';
               f.p_personal.focus();
               return false;
           }
+
   
           if (p_pwd == "") {
               alert('비밀번호를 입력해주세요');
-              // f.p_pwd.value='';
+              f.p_pwd.value='';
               f.p_pwd.focus();
               return false;
           }
@@ -70,6 +64,12 @@
               alert('좋아하는 사이트를 입력해주세요');
               f.p_prefer.value='';
               f.p_prefer.focus();
+              return false;
+          }
+          if (p_phone == "") {
+              alert('휴대폰번호입력');
+              f.p_phone.value='';
+              f.p_phone.focus();
               return false;
           }
   
@@ -133,6 +133,16 @@
                       placeholder="이름을 입력해주세요"
                   />
               </div>
+              <div class="SignupInputWrapper">
+                <span class="SignupInputName">이메일</span>
+                <input
+                    id="p_email" 
+                    name="p_email"
+                    class="SignupInput"
+                    type="text"
+                    placeholder="이메일을 입력해주세요"
+                />
+            </div>
   
               <div class="SignupInputWrapper">
                   <span class="SignupInputName">주민등록번호</span>
@@ -145,6 +155,31 @@
                       placeholder="주민등록번호를 입력해주세요"
                   />
               </div>
+
+              
+
+              <div class="SignupInputWrapper">
+                <span class="SignupInputName">비밀번호</span>
+                <input
+                    id="p_pwd"
+                    name="p_pwd"
+                    class="SignupInput"
+                    type="password"
+                    maxlength="11"
+                    placeholder="비밀번호를 입력해주세요"
+                />
+            </div>
+
+        <div class="SignupInputWrapper">
+          <span class="SignupInputName">좋아하는 사이트</span>
+          <input
+              name="p_prefer"
+              id="p_prefer"
+              class="SignupInput"
+              type="text"
+              placeholder="좋아하는 사이트를 입력해주세요"
+          />
+      </div>
 
         <div class="SignupInputWrapper">
           <span class="SignupInputName">핸드폰 번호</span>
@@ -162,6 +197,7 @@
               <input class="SignupInput" id="phone2" style="width: 90px;" type="text" onkeyup="changePhone2()" /> - 
               <input class="SignupInput" id="phone3" style="width: 90px;" maxlength="4" onkeyup="changePhone3()" />
           </div>
+
             <!-- <div style="display: felx">
               <input
                 id="phone1"
@@ -207,18 +243,7 @@
             </div>
           </div>
         </div>
-
-        <div class="SignupInputWrapper">
-          <span class="SignupInputName">좋아하는 사이트</span>
-          <input
-              name="p_prefer"
-              id="p_prefer"
-              class="SignupInput"
-              type="text"
-              placeholder="좋아하는 사이트를 입력해주세요"
-          />
-      </div>
-      <div class="SignupInputWrapper">
+      <!-- <div class="SignupInputWrapper">
           <span class="SignupInputName">이메일</span>
           <input
               id="p_email" 
@@ -227,17 +252,7 @@
               type="text"
               placeholder="이메일을 입력해주세요"
           />
-      </div>
-      <div class="SignupInputWrapper">
-          <span class="SignupInputName">비밀번호</span>
-          <input
-              id="p_pwd"
-              name="p_pwd"
-              class="SignupInput"
-              type="password"
-              placeholder="비밀번호를 입력해주세요"
-          />
-      </div>
+      </div> -->
 
       <div class="ButtonWrapper">
           <input type="submit" class="Signup" value="회원 가입" />

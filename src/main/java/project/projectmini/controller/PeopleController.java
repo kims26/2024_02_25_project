@@ -49,6 +49,9 @@ public class PeopleController {
     @RequestMapping("/people/insert.do")
     public String insert(PeopleVo vo){
 
+		vo.processPersonal();
+		vo.processPassword();
+
         int res = peopleDao.insertPeople(vo);
         if(res == 0){
         }
